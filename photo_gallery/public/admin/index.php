@@ -1,6 +1,6 @@
 <?php
-require_once '../../inc/functions.php';
-require_once '../../inc/session.php';
+require_once '../../inc/initialize.php';
+
 if (!$session->is_logged_in()) { redirect_to("login.php"); }
 ?>
 <!DOCTYPE html>
