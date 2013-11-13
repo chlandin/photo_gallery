@@ -1,6 +1,6 @@
 <?php
 
-require_once '../inc/database.php';
+require_once 'database.php';
 
 class User {
 
@@ -28,6 +28,20 @@ class User {
             $object_array[] = self::instantiate($row);
         }
         return $object_array;
+    }
+
+    public static function authenticate($username = "", $password = "") {
+        global $db;
+        $username = $db->escape_value($username);
+        $password = $db->escape_value($password);
+
+        $sql = "SELECT * FROM users ";
+        $sql .= "WHERE username = '{$username}' ";
+        $sql .= "AND password = '{$password}' ";
+        $sql .= "LIMIT 1";
+
+        $result_array = self::find_by_sql($sql);
+        return !empty($result_array) ? array_shift($result_array) : false;
     }
 
     public function full_name() {
