@@ -13,16 +13,16 @@ require_once '../../inc/initialize.php';
 	/* $user->password = "abcd12345"; */
 	/* $user->first_name = "John"; */
 	/* $user->last_name = "Smith"; */
-	/* $user->create(); */
+	/* $user->save(); */
 
     // update
-    /* $user = User::find_by_id(2); */
-    /* $user->password = "newpassword"; */
-    /* /1* $user->update(); *1/ */
-    /* $user->save(); */
+    $user = User::find_by_id(4);
+    $user->password = "dfdfdfdfdf";
+    /* $user->update(); */
+    $user->save();
 
     // delete
-    /* $user = User::find_by_id(2); */
+    /* $user = User::find_by_id(3); */
     /* $user->delete(); */
 ?>
 
