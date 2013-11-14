@@ -1,7 +1,6 @@
-<?php
-require_once '../inc/functions.php';
-require_once '../inc/database.php';
-require_once '../inc/user.php';
+<?php require_once("../inc/initialize.php"); ?>
+
+<?php include_layout_template('header.php'); ?> <?
 
 $user = User::find_by_id(1);
 echo $user->username;
@@ -19,3 +18,4 @@ foreach ($users as $user) {
 }
 
 ?>
+<?php include_layout_template('footer.php'); ?>
