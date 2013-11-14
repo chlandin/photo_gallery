@@ -22,7 +22,7 @@ echo "<br />";
 // file access modes:
 // r    read from start, file must exist
 // w    overwrite from start, creates file if missing
-// a    append, write from end
+// a    append, write from end, creates file if missing
 // x    write from start, error if file exists
 
 $file = 'file_test.txt';

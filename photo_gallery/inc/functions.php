@@ -37,4 +37,17 @@ function include_layout_template($template = "") {
     include(SITE_ROOT.DS.'public'.DS.'layouts'.DS.$template);
 }
 
+function log_action($action, $message="") {
+    $logfile = SITE_ROOT.DS.'logs'.DS.'log.txt';
+
+    if ($handle = fopen($logfile, 'a')) {
+        $timestamp = strftime("%Y-%m-%d %H:%M:%S", time());
+        $content = "{$timestamp} | {$action}: {$message}\n";
+        fwrite($handle, $content);
+        fclose($handle);
+    } else {
+        echo 'Could not open log file for writing.';
+    }
+}
+
 ?>
