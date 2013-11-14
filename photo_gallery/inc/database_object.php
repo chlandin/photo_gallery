@@ -95,7 +95,7 @@ class DatabaseObject {
         $sql = "UPDATE ".static::$table_name." SET ";
         $sql .= join(", ", $attribute_pairs);
         $sql .= " WHERE id=". $db->escape_value($this->id);
-        echo '<pre>'; print_r($sql); echo '</pre>';
+        /* echo '<pre>'; print_r($sql); echo '</pre>'; */
         $db->query($sql);
         return ($db->affected_rows() == 1) ? true : false;
     }

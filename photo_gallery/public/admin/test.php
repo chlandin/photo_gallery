@@ -16,14 +16,21 @@ require_once '../../inc/initialize.php';
 	/* $user->save(); */
 
     // update
-    $user = User::find_by_id(4);
-    $user->password = "dfdfdfdfdf";
-    /* $user->update(); */
-    $user->save();
+    /* $user = User::find_by_id(4); */
+    /* $user->password = "dfdfdfdfdf"; */
+    /* /1* $user->update(); *1/ */
+    /* $user->save(); */
 
     // delete
     /* $user = User::find_by_id(3); */
     /* $user->delete(); */
+
+    /* $user = new Photograph(); */
+	/* $user->filename = "johnsmith"; */
+	/* $user->type = "abcd12345"; */
+	/* $user->size = 23; */
+	/* $user->caption = "Smith"; */
+	/* $user->save(); */
 ?>
 
 <?php include_layout_template('admin_footer.php'); ?>
