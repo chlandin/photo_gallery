@@ -28,6 +28,8 @@ if (isset($_POST['submit'])) {
 ?>
 
 <?php include_layout_template('admin_header.php'); ?>
+<a href="../">&laquo; Back to Photo gallery</a>
+<br /><br />
 
     <h2>Staff Login</h2>
     <?php echo output_message($message); ?>

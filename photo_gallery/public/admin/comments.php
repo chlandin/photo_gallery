@@ -18,12 +18,14 @@ $comments = $photo->comments();
 
 <?php include_layout_template('admin_header.php'); ?>
 
+<a href="list_photos.php">&laquo; Back</a>
+<br /><br />
+
 <div style="margin-left: 20px">
+
     <h2>Comments on <?php echo $photo->filename; ?></h2>
     <?php echo output_message($message); ?>
-
-    <a href="list_photos.php">&laquo; Back</a>
-    <br /><br />
+    
     <img src="../<?php echo $photo->image_path(); ?>" width="200" />
     <p><?php echo $photo->caption; ?></p>
 </div>

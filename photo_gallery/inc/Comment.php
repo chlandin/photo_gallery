@@ -1,6 +1,6 @@
 <?php
 
-require_once(LIB_PATH.DS.'database.php');
+require_once(LIB_PATH.DS.'Database.php');
 
 class Comment extends DatabaseObject {
 
