@@ -56,7 +56,6 @@ class Photograph extends DatabaseObject {
                 return false;
             }
             if (empty($this->filename) || empty($this->temp_path)) {
-                echo "HELLO!!";
                 $this->errors[] = "The file location was not available.";
                 return false;
             }
@@ -89,6 +88,10 @@ class Photograph extends DatabaseObject {
 
     public function image_path() {
         return $this->upload_dir.DS.$this->filename;
+    }
+
+    public function comments() {
+        return Comment::find_comments_on($this->id);
     }
 }
 ?>
