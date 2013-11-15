@@ -14,6 +14,7 @@ class DatabaseObject {
 
     public static function find_by_id($id=0) {
         global $db;
+        $id = $db->escape_value($id);
         $result_array = static::find_by_sql("SELECT * FROM " . static::$table_name . " WHERE id={$id} LIMIT 1");
         return !empty($result_array) ? array_shift($result_array) : false;
     }
@@ -107,6 +108,18 @@ class DatabaseObject {
         $sql .= " LIMIT 1";
         $db->query($sql);
         return ($db->affected_rows() == 1) ? true : false;
+    }
+
+    public function size_as_text() {
+        if ($this->size < 1024) {
+            return "{$this->size} bytes";
+        } elseif ($this->size < 1048576) {
+            $size_kb = round($this->size/1024);
+            return "{$size_kb} KB";
+        } else {
+            $size_mb = round($this->size/1048576, 1);
+            return "{$size_mb} MB";
+        }
     }
 }
 

@@ -1,3 +1,4 @@
 2013-11-14 13:35:49 | Logs Cleared: by User ID 1
 2013-11-14 13:36:43 | Login: admin logged in
 2013-11-14 22:44:38 | Login: admin logged in
+2013-11-15 10:18:43 | Login: admin logged in
