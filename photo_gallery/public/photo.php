@@ -44,16 +44,16 @@ $comments = $photo->comments();
 </div>
 
 <div id="comments">
-  <?php foreach($comments as $comment): ?>
-    <div class="comment" style="margin-bottom: 2em;">
-        <div class="author">
-          <?php echo htmlentities($comment->author); ?> wrote:
-        </div>
-      <div class="body">
-                <?php echo strip_tags($comment->body, '<strong><em><p>'); ?>
+    <?php foreach($comments as $comment): ?>
+        <div class="comment" style="margin-bottom: 2em;">
+            <div class="author">
+                <?php echo htmlentities($comment->author); ?> wrote:
             </div>
+        <div class="body">
+            <?php echo strip_tags($comment->body, '<strong><em><p>'); ?>
+        </div>
         <div class="meta-info" style="font-size: 0.8em;">
-          <?php echo datetime_to_text($comment->created); ?>
+            <?php echo datetime_to_text($comment->created); ?>
         </div>
     </div>
   <?php endforeach; ?>
