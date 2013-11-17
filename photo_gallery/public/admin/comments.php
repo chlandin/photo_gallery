@@ -18,7 +18,7 @@ $comments = $photo->comments();
 
 <?php include_layout_template('admin_header.php'); ?>
 
-<a href="list_photos.php">&laquo; Back</a>
+<a href="list_photos.php?page=<?php echo $_GET['page']; ?>">&laquo; Back</a>
 <br /><br />
 
 <div style="margin-left: 20px">
@@ -43,7 +43,7 @@ $comments = $photo->comments();
                 <?php echo datetime_to_text($comment->created); ?>
             </div>
             <div class="actions" style="font-size: 0.8em">
-                <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete Comment</a>
+                <a href="delete_comment.php?id=<?php echo $comment->id; ?>&page=<?php echo $_GET['page']; ?>">Delete Comment</a>
             </div>
         </div>
     <?php endforeach; ?>

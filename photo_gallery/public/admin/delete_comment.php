@@ -10,7 +10,7 @@ if (empty($_GET['id'])) {
 $comment = Comment::find_by_id($_GET['id']);
 if ($comment && $comment->delete()) {
     $session->message("The comment was deleted.");
-    redirect_to("comments.php?id={$comment->photograph_id}");
+    redirect_to("comments.php?id={$comment->photograph_id}&page={$_GET['page']}");
 } else {
     $session->message("The comment could not be deleted.");
     redirect_to('list_photos.php');

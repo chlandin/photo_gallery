@@ -17,6 +17,7 @@ require_once(LIB_PATH.DS.'functions.php');
 require_once(LIB_PATH.DS.'Session.php');
 require_once(LIB_PATH.DS.'Database.php');
 require_once(LIB_PATH.DS.'Database_object.php');
+require_once(LIB_PATH.DS.'Pagination.php');
 
 // load database-related classes
 require_once(LIB_PATH.DS.'User.php');

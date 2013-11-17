@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
 
     $new_comment = Comment::make($photo->id, $author, $body);
     if($new_comment && $new_comment->save()) {
-        redirect_to("photo.php?id={$photo->id}");
+        redirect_to("photo.php?id={$photo->id}&page={$_GET['page']}");
     } else {
         $message = "There was an error that prevented the comment from being saved.";
     }
@@ -37,7 +37,7 @@ $comments = $photo->comments();
 <div style="margin-left: 20px">
     <h2>Photo</h2>
 
-    <a href="index.php">&laquo; Back</a>
+    <a href="index.php?page=<?php echo $_GET['page']; ?>">&laquo; Back</a>
     <br /><br />
     <img src="<?php echo $photo->image_path(); ?>" />
     <p><?php echo $photo->caption; ?></p>
@@ -63,7 +63,7 @@ $comments = $photo->comments();
 <div id="comment-form">
     <h3>New Comment</h3>
     <?php echo output_message($message); ?>
-    <form action="photo.php?id=<?php echo $photo->id; ?>" method="post">
+    <form action="photo.php?id=<?php echo $photo->id; ?>&page=<?php echo $_GET['page']; ?>" method="post">
         <table>
         <tr>
             <td>Your name:</td>
